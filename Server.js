@@ -28,8 +28,6 @@ mongoose.connect("mongodb+srv://surendra:v5d4ZWSfuCBekpTX@cluster0.dmyd54m.mongo
     console.log("mongodb connected.")
 }).catch((err) => { console.log(err) })
 
-
-
 cors = require('cors')
 app.use(cors())
 
