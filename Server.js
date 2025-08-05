@@ -6,9 +6,7 @@ app = express()
 
 // app.set('view engine', 'ejs')
 
-app.listen(8080, () => {
-    console.log("server start------")
-})
+
 
 const bodyParser = require("body-parser")
 app.use(bodyParser.json())
@@ -390,6 +388,10 @@ app.delete('/wishlist/:id', async (req, res) => {
 
 
 
+
+app.listen(8080, () => {
+    console.log("server start------")
+})
 
 
 
