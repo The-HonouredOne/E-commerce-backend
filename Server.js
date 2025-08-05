@@ -21,7 +21,6 @@ const Productschema = require("./model/Productmodel")
 const Cartschema = require("./model/Cart")
 const Wishlistschema = require("./model/Wishlist")
 
-
 const { mongoose } = require("mongoose")
 // const Users = require("./model/Users")
 mongoose.connect("mongodb+srv://surendra:v5d4ZWSfuCBekpTX@cluster0.dmyd54m.mongodb.net/freshcart1").then((res) => {
