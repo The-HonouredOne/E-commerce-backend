@@ -381,3 +381,23 @@ app.delete('/wishlist/:id', async (req, res) => {
 
     }
 })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+app.get("/",(req,res)=>{
+    res.json({
+        status:true
+    })
+})
