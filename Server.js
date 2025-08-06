@@ -1,9 +1,17 @@
+require('dotenv').config();
+
 express = require("express")
+
 
 
 
 app = express()
 
+
+const PORT = process.env.PORT || 8080
+app.listen(PORT, () => {
+    console.log("server start------")
+})
 // app.set('view engine', 'ejs')
 
 
@@ -21,27 +29,16 @@ const Wishlistschema = require("./model/Wishlist")
 
 const { mongoose } = require("mongoose")
 // const Users = require("./model/Users")
-mongoose.connect("mongodb+srv://surendra:v5d4ZWSfuCBekpTX@cluster0.dmyd54m.mongodb.net/freshcart1").then((res) => {
+// mongoose.connect("mongodb+srv://surendra:v5d4ZWSfuCBekpTX@cluster0.dmyd54m.mongodb.net/freshcart1").then((res) => {
+//     console.log("mongodb connected.")
+// }).catch((err) => { console.log(err) })
+
+mongoose.connect(process.env.MONGO_URI).then((res) => {
     console.log("mongodb connected.")
 }).catch((err) => { console.log(err) })
 
 cors = require('cors')
 app.use(cors())
-
-
-// async function sachin() {
-//     let b = await a.connect()
-//     let c = await b.db("nodejs")
-//     let d = await c.collection("taskdata")
-//     let result = await d.find({}).toArray()
-//     // console.log(result)
-// }
-// sachin()
-
-// app.get('/',  (req, res)=>{
-//     res.send('hello home')
-// })
-
 
 
 // to login -------------------------------------------------------------
@@ -389,12 +386,8 @@ app.delete('/wishlist/:id', async (req, res) => {
 
 
 
-app.listen(8080, () => {
-    console.log("server start------")
-})
 
-app.get("/",(req,res)=>{
-    res.json({
-        status:true
-    })
-})
+
+app.get('/', (req, res) => {
+    res.send('Hello from backend');
+});
